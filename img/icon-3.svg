@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62">
+  <g id="Group_3" data-name="Group 3" transform="translate(-191 -88)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(191 88)" fill="none" stroke="#fff" stroke-width="1">
+      <circle cx="31" cy="31" r="31" stroke="none"/>
+      <circle cx="31" cy="31" r="30.5" fill="none"/>
+    </g>
+    <path id="Icon_awesome-trash-alt" data-name="Icon awesome-trash-alt" d="M1.85,26.83a2.776,2.776,0,0,0,2.776,2.776H21.279a2.776,2.776,0,0,0,2.776-2.776V7.4H1.85Zm15.728-14.8a.925.925,0,0,1,1.85,0V24.98a.925.925,0,1,1-1.85,0Zm-5.551,0a.925.925,0,0,1,1.85,0V24.98a.925.925,0,1,1-1.85,0Zm-5.551,0a.925.925,0,0,1,1.85,0V24.98a.925.925,0,1,1-1.85,0ZM24.98,1.85H18.041L17.5.769A1.388,1.388,0,0,0,16.254,0H9.645A1.372,1.372,0,0,0,8.408.769L7.864,1.85H.925A.925.925,0,0,0,0,2.776v1.85a.925.925,0,0,0,.925.925H24.98a.925.925,0,0,0,.925-.925V2.776A.925.925,0,0,0,24.98,1.85Z" transform="translate(209.422 104.197)" fill="#fff"/>
+  </g>
+</svg>
