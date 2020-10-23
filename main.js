@@ -1,4 +1,4 @@
-fetch("http://quater.org/assignment/wp-json/wp/v2/property?_embed")
+fetch("https://quater.org/assignment/wp-json/wp/v2/property?_embed")
     .then(res=>res.json())
     .then(handeData)
 
