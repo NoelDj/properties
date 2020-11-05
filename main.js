@@ -1,16 +1,17 @@
+
+
+
 fetch("https://quater.org/assignment/wp-json/wp/v2/property?_embed")
     .then(res=>res.json())
     .then(handeData)
 
 function handeData(posts){
-    console.log(posts);
     posts.forEach(showPost)
 }
 
 function showPost(post){
-    console.log(post);
-    const template = document.querySelector("template").content;
 
+const template = document.querySelector("template").content;
     const copy = template.cloneNode(true);
 
     copy.querySelector("h2").textContent=post.title.rendered;
@@ -24,5 +25,22 @@ function showPost(post){
 
     /*copy.querySelector(".descr1iption").innerHTML=post.content.rendered;*/
 
+
+    const a  = copy.querySelector("a");
+    a.href += post.id;
+
+
     document.querySelector("main").appendChild(copy);
+
+
+
 }
+
+
+/*Adding links*/
+
+
+
+/*for(i=0; i < links.length; i++){
+    console.log(links[i].textContent)
+}*/
