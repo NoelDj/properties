@@ -50,13 +50,23 @@ header button {
 }
 
 /*main*/
-main {
+main,
+section{
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     grid-gap: 50px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+section {
+    margin-top: 100px;
+}
+
+main h1 {
+    grid-column: 1 / -1;
+    text-transform: capitalize;
 }
 
 /*article card*/
@@ -128,11 +138,13 @@ ul li span {
     font-size: 28px;
 }
 
-.houseimg {
+.houseimg,
+.houseimg2 {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
 
 .imgbox {
     position: relative;

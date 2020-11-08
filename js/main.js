@@ -1,13 +1,14 @@
-
+window.addEventListener("DOMContentLoaded", getNav)
 
 
 fetch("https://quater.org/assignment/wp-json/wp/v2/property?_embed")
     .then(res=>res.json())
-    .then(handeData)
+    .then(handleData)
 
-function handeData(posts){
+function handleData(posts){
     posts.forEach(showPost)
 }
+
 
 function showPost(post){
 
@@ -39,6 +40,24 @@ const template = document.querySelector("template").content;
 
 /*Adding links*/
 
+function getNav(){
+    fetch("https://quater.org/assignment/wp-json/wp/v2/categories?parent=0&orderby=count")
+    .then(res => res.json())
+    .then(createNav)
+}
+
+function createNav(category){
+    category.forEach(addLink);
+}
+
+function addLink(oneCategory){
+    console.log(oneCategory)
+    const link = document.createElement("a");
+    link.textContent = oneCategory.name;
+    link.href = "category.html?category=" + oneCategory.id;
+    console.log(link);
+    document.querySelector("nav").appendChild(link);
+}
 
 
 /*for(i=0; i < links.length; i++){

@@ -1,12 +1,11 @@
 window.addEventListener("DOMContentLoaded", getData)
 
-const datalink2 = "https://quater.org/assignment/wp-json/wp/v2/property?_embed";
+const datalink = "https://quater.org/assignment/wp-json/wp/v2/property?_embed";
 
 function getData() {
+    getNav()
     const urlParams = new URLSearchParams(window.location.search);
     const house_id = urlParams.get("house_id");
-    console.log(window.location)
-    console.log(house_id)
 
     if (house_id) {
         fetch("https://quater.org/assignment/wp-json/wp/v2/property/" + house_id + "?_embed")
@@ -14,19 +13,55 @@ function getData() {
             .then(showPost)
     } else if (!house_id && window.location.pathname == "/singlepage.html") {
         window.location.replace("index.html");
-    } else {
+    }
         fetch(datalink)
             .then(res => res.json())
             .then(handleData)
-    }
+
 }
 
-function handleData(posts) {
-    console.log(posts);
+function getNav(){
+    fetch("https://quater.org/assignment/wp-json/wp/v2/categories?parent=0&orderby=count")
+    .then(res => res.json())
+    .then(createNav)
+}
+
+
+function createNav(category){
+    category.forEach(addLink);
+}
+
+function addLink(oneCategory){
+    const link = document.createElement("a");
+    link.textContent = oneCategory.name;
+    link.href = "category.html?house_id=" + oneCategory.id;
+    document.querySelector("nav").appendChild(link);
+}
+
+
+function handleData(posts){
+    /*if (posts.bath == 1){
+        posts.forEach(randomItem)
+    }*/
+    posts.forEach(randomItem);
+}
+
+function randomItem(posts) {
+
+
+
+    const template = document.querySelector("#two").content;
+    const copy = template.cloneNode(true);
+
+    copy.querySelector("h2").textContent = posts.title.rendered;
+    copy.querySelector(".houseimg").src = posts._embedded['wp:featuredmedia'][0].source_url
+
+    document.querySelector("section").appendChild(copy);
+
+
 }
 
 function showPost(post) {
-    console.log(post)
 
     const template = document.querySelector("template").content;
     const copy = template.cloneNode(true);
@@ -48,3 +83,5 @@ function showPost(post) {
 
 
 }
+
+
